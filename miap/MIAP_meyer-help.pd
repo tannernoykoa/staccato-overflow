@@ -1,0 +1,103 @@
+#N canvas 205 53 872 363 12;
+#X floatatom 58 168 5 0 0 0 - - -;
+#X text 115 58 by Zachary Seldess;
+#X text 114 15 Convert Meyer Matrix-3/D-Mitri project files to MIAP-native
+JSON files, f 44;
+#X text 603 129 load project file;
+#X msg 58 196 map \$1;
+#X text 107 165 map ID in project file;
+#X text 322 232 save map to JSON file;
+#X obj 36 282 MIAP_meyer, f 13;
+#X text 20 14 MIAP_meyer;
+#X text 116 87 based on Meyer Sound's SpaceMap(R) abstract panning
+tool, f 44;
+#X text 679 47 <-- look inside;
+#N canvas 95 22 507 131 Attributions 0;
+#X text 13 13 The MIAP MaxMSP and Pure Data (PD) object suite is based
+on Meyer Sound's SpaceMap(R) multi-channel panning feature of CueStation.
+SpaceMap and CueStation are trademarks of Meyer Sound Laboratories
+\, Incorporated.;
+#X restore 511 17 pd Attributions;
+#X text 639 16 <-- look inside;
+#X text 453 281 http://www.zacharyseldess.com;
+#X text 453 305 distributed under license: http://creativecommons.org/licenses/by/3.0/
+, f 44;
+#N canvas 44 22 631 833 About_SpaceMap_and_MIAP 0;
+#X text 14 15 From Meyer Sound’s CueStation User Guide: “A SpaceMap
+design is constructed from two basic elements: nodes and trisets. Nodes
+commonly represent the positions of loudspeakers or groups of speakers
+\, and may be of several types. Trisets link three nodes together \,
+providing the means to distribute signal proportionally among them.”
+;
+#X text 14 145 Node Types:;
+#X text 13 172 Nodes in a map represent single outlets (Speaker Node)
+\, groups of outlets (Virtual Node) \, or points of silence (Silent
+node). Nodes can also derive their audio from other nodes (Derived
+nodes).;
+#X text 14 257 Speaker nodes;
+#X text 127 257 represent single physical outputs in Meyer Sound’s
+Matrix3 and D-Mitri systems. Those outputs can be connected directly
+to speakers \, or passed to effects processors and other external devices.
+Multiple speaker nodes in a map can be bound to the same physical output
+\, if desired. Again there is no inherent relationship between a speaker’s
+physical location in real space and it’s location or locations in
+mapped space.;
+#X text 127 401 represent points in the map that \, if connected to
+a Triset \, behave similarly to a Speaker node. In contrast to a Speaker
+node \, which sends its panned signal on to a physical output \, signal
+panned to a Silent node is simply ignored (i.e. silent). Silent nodes
+provide a convenient way to create fade-ins and fade-outs within a
+map.;
+#X text 20 401 Silent nodes;
+#X text 127 514 represent points in the mapped space whose existence
+is “virtualized” via weighted links to one ore more of a map’s
+Speaker nodes. Signal from linked Speaker nodes is \, by default \,
+weighted equally between all Speaker nodes \, though weightings can
+be customized to bias the signal of one speaker node over another.
+;
+#X text 13 514 Virtual nodes;
+#X text 127 620 For MIAP panners \, the resulting signal routed to
+the linked Speaker nodes can be either power-preserving (the default
+setting) or linearly summing.;
+#X text 13 686 Derived nodes;
+#X text 127 686 as the name implies \, derive their signal from Speaker
+nodes. This is the only node type that is not typically part of a Triset
+\, and therefore its physical placement in the mapped space has no
+functional purpose (aside from visual clarity).;
+#X text 127 762 For MIAP panners \, the resulting signal derived from
+the linked Speaker nodes can be either power-preserving or linearly
+summing (the default setting.).;
+#X restore 511 78 pd About_SpaceMap_and_MIAP;
+#X text 728 77 <-- look inside;
+#N canvas 48 22 560 301 SpaceMap(R)_links 0;
+#X text 23 15 MIAP website:;
+#X text 23 76 Meyer Sound's SpaceMap Application:;
+#X text 51 183 https://www.meyersound.com/news/2013/steve_ellison_spacemap/
+;
+#X text 24 140 Steve Ellison's 2013 article on the evolution of SpaceMap
+in "Lighting and Sound America":;
+#X text 24 221 Meyer Sound Cue Station user guide (see SpaceMap section):
+;
+#X text 51 250 http://www.meyersound.com/sites/default/files/cuestation_5.2.0_user_guide.5.13.2011.pdf
+;
+#X text 50 102 http://meyersound.com/products/d-mitri/cuestation/register/index.htm
+;
+#X text 50 41 http://www.zacharyseldess.com/miap;
+#X restore 511 47 pd SpaceMap(R)_links;
+#X obj 36 319 print state;
+#X obj 137 319 print info;
+#X obj 605 186 openpanel;
+#X obj 605 162 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 605 216 print;
+#X msg 39 119 read_project /Users/rust/Documents/Pd/externals/miap/unitygain.dmitriProject
+, f 79;
+#X msg 77 233 write_map bloom-cubefest.json;
+#X connect 0 0 4 0;
+#X connect 4 0 7 0;
+#X connect 7 0 18 0;
+#X connect 7 1 19 0;
+#X connect 20 0 22 0;
+#X connect 21 0 20 0;
+#X connect 23 0 7 0;
+#X connect 24 0 7 0;

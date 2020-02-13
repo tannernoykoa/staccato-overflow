@@ -1,0 +1,19 @@
+#N canvas 0 23 352 300 10;
+#X obj 70 147 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 70 167 sig~;
+#X obj 70 109 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 70 58 inlet;
+#X obj 70 218 outlet~;
+#X text 94 143 delay value must match or exceed sum of first 2 numbers
+(A/D), f 32;
+#X obj 70 197 else/adsr~ 75 50 0.75 75;
+#X obj 87 128 delay 125;
+#X connect 0 0 1 0;
+#X connect 1 0 6 0;
+#X connect 2 0 0 0;
+#X connect 2 0 7 0;
+#X connect 3 0 2 0;
+#X connect 6 0 4 0;
+#X connect 7 0 0 0;

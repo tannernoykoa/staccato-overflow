@@ -1,0 +1,777 @@
+{
+    "nodes": {
+        "100": {
+            "attenuation": 1.0,
+            "channel": 6,
+            "links": {},
+            "position": [
+                340.0,
+                240.0
+            ],
+            "type": 1
+        },
+        "101": {
+            "attenuation": 1.0,
+            "channel": 14,
+            "links": {},
+            "position": [
+                340.0,
+                280.0
+            ],
+            "type": 1
+        },
+        "102": {
+            "attenuation": 1.0,
+            "channel": 18,
+            "links": {},
+            "position": [
+                340.0,
+                320.0
+            ],
+            "type": 1
+        },
+        "103": {
+            "attenuation": 1.0,
+            "channel": 1,
+            "links": {},
+            "position": [
+                500.0,
+                200.0
+            ],
+            "type": 1
+        },
+        "104": {
+            "attenuation": 1.0,
+            "channel": 7,
+            "links": {},
+            "position": [
+                500.0,
+                240.0
+            ],
+            "type": 1
+        },
+        "105": {
+            "attenuation": 1.0,
+            "channel": 13,
+            "links": {},
+            "position": [
+                500.0,
+                280.0
+            ],
+            "type": 1
+        },
+        "106": {
+            "attenuation": 1.0,
+            "channel": 19,
+            "links": {},
+            "position": [
+                500.0,
+                320.0
+            ],
+            "type": 1
+        },
+        "107": {
+            "attenuation": 1.0,
+            "channel": 0,
+            "links": {},
+            "position": [
+                660.0,
+                200.0
+            ],
+            "type": 1
+        },
+        "108": {
+            "attenuation": 1.0,
+            "channel": 8,
+            "links": {},
+            "position": [
+                660.0,
+                240.0
+            ],
+            "type": 1
+        },
+        "109": {
+            "attenuation": 1.0,
+            "channel": 12,
+            "links": {},
+            "position": [
+                660.0,
+                280.0
+            ],
+            "type": 1
+        },
+        "110": {
+            "attenuation": 1.0,
+            "channel": 20,
+            "links": {},
+            "position": [
+                660.0,
+                320.0
+            ],
+            "type": 1
+        },
+        "111": {
+            "attenuation": 1.0,
+            "channel": 11,
+            "links": {},
+            "position": [
+                820.0,
+                200.0
+            ],
+            "type": 1
+        },
+        "112": {
+            "attenuation": 1.0,
+            "channel": 9,
+            "links": {},
+            "position": [
+                820.0,
+                240.0
+            ],
+            "type": 1
+        },
+        "113": {
+            "attenuation": 1.0,
+            "channel": 23,
+            "links": {},
+            "position": [
+                820.0,
+                280.0
+            ],
+            "type": 1
+        },
+        "114": {
+            "attenuation": 1.0,
+            "channel": 21,
+            "links": {},
+            "position": [
+                820.0,
+                320.0
+            ],
+            "type": 1
+        },
+        "115": {
+            "attenuation": 1.0,
+            "channel": 10,
+            "links": {},
+            "position": [
+                980.0,
+                200.0
+            ],
+            "type": 1
+        },
+        "116": {
+            "attenuation": 1.0,
+            "channel": 22,
+            "links": {},
+            "position": [
+                980.0,
+                240.0
+            ],
+            "type": 1
+        },
+        "117": {
+            "attenuation": 1.0,
+            "channel": -1,
+            "links": {},
+            "position": [
+                500.0,
+                160.0
+            ],
+            "type": 4
+        },
+        "81": {
+            "attenuation": 1.0,
+            "channel": -1,
+            "links": {
+                "0": {
+                    "targetnode": 93,
+                    "weight": 1.0
+                },
+                "1": {
+                    "targetnode": 94,
+                    "weight": 1.0
+                }
+            },
+            "position": [
+                20.0,
+                0.0
+            ],
+            "type": 2
+        },
+        "85": {
+            "attenuation": 1.0,
+            "channel": -1,
+            "links": {
+                "0": {
+                    "targetnode": 95,
+                    "weight": 1.0
+                },
+                "1": {
+                    "targetnode": 96,
+                    "weight": 1.0
+                },
+                "2": {
+                    "targetnode": 97,
+                    "weight": 1.0
+                },
+                "3": {
+                    "targetnode": 98,
+                    "weight": 1.0
+                },
+                "4": {
+                    "targetnode": 93,
+                    "weight": 1.0
+                },
+                "5": {
+                    "targetnode": 94,
+                    "weight": 1.0
+                }
+            },
+            "position": [
+                180.0,
+                0.0
+            ],
+            "type": 2
+        },
+        "86": {
+            "attenuation": 1.0,
+            "channel": -1,
+            "links": {
+                "0": {
+                    "targetnode": 99,
+                    "weight": 1.0
+                },
+                "1": {
+                    "targetnode": 100,
+                    "weight": 1.0
+                },
+                "2": {
+                    "targetnode": 101,
+                    "weight": 1.0
+                },
+                "3": {
+                    "targetnode": 102,
+                    "weight": 1.0
+                },
+                "4": {
+                    "targetnode": 93,
+                    "weight": 1.0
+                },
+                "5": {
+                    "targetnode": 94,
+                    "weight": 1.0
+                },
+                "6": {
+                    "targetnode": 95,
+                    "weight": 1.0
+                },
+                "7": {
+                    "targetnode": 96,
+                    "weight": 1.0
+                },
+                "8": {
+                    "targetnode": 97,
+                    "weight": 1.0
+                },
+                "9": {
+                    "targetnode": 98,
+                    "weight": 1.0
+                }
+            },
+            "position": [
+                340.0,
+                0.0
+            ],
+            "type": 2
+        },
+        "87": {
+            "attenuation": 1.0,
+            "channel": -1,
+            "links": {
+                "0": {
+                    "targetnode": 103,
+                    "weight": 1.0
+                },
+                "1": {
+                    "targetnode": 104,
+                    "weight": 1.0
+                },
+                "10": {
+                    "targetnode": 99,
+                    "weight": 1.0
+                },
+                "11": {
+                    "targetnode": 100,
+                    "weight": 1.0
+                },
+                "12": {
+                    "targetnode": 101,
+                    "weight": 1.0
+                },
+                "13": {
+                    "targetnode": 102,
+                    "weight": 1.0
+                },
+                "2": {
+                    "targetnode": 105,
+                    "weight": 1.0
+                },
+                "3": {
+                    "targetnode": 106,
+                    "weight": 1.0
+                },
+                "4": {
+                    "targetnode": 93,
+                    "weight": 1.0
+                },
+                "5": {
+                    "targetnode": 94,
+                    "weight": 1.0
+                },
+                "6": {
+                    "targetnode": 95,
+                    "weight": 1.0
+                },
+                "7": {
+                    "targetnode": 96,
+                    "weight": 1.0
+                },
+                "8": {
+                    "targetnode": 97,
+                    "weight": 1.0
+                },
+                "9": {
+                    "targetnode": 98,
+                    "weight": 1.0
+                }
+            },
+            "position": [
+                500.0,
+                0.0
+            ],
+            "type": 2
+        },
+        "88": {
+            "attenuation": 1.0,
+            "channel": -1,
+            "links": {
+                "0": {
+                    "targetnode": 107,
+                    "weight": 1.0
+                },
+                "1": {
+                    "targetnode": 108,
+                    "weight": 1.0
+                },
+                "10": {
+                    "targetnode": 99,
+                    "weight": 1.0
+                },
+                "11": {
+                    "targetnode": 100,
+                    "weight": 1.0
+                },
+                "12": {
+                    "targetnode": 101,
+                    "weight": 1.0
+                },
+                "13": {
+                    "targetnode": 102,
+                    "weight": 1.0
+                },
+                "14": {
+                    "targetnode": 103,
+                    "weight": 1.0
+                },
+                "15": {
+                    "targetnode": 104,
+                    "weight": 1.0
+                },
+                "16": {
+                    "targetnode": 105,
+                    "weight": 1.0
+                },
+                "17": {
+                    "targetnode": 106,
+                    "weight": 1.0
+                },
+                "2": {
+                    "targetnode": 109,
+                    "weight": 1.0
+                },
+                "3": {
+                    "targetnode": 110,
+                    "weight": 1.0
+                },
+                "4": {
+                    "targetnode": 93,
+                    "weight": 1.0
+                },
+                "5": {
+                    "targetnode": 94,
+                    "weight": 1.0
+                },
+                "6": {
+                    "targetnode": 95,
+                    "weight": 1.0
+                },
+                "7": {
+                    "targetnode": 96,
+                    "weight": 1.0
+                },
+                "8": {
+                    "targetnode": 97,
+                    "weight": 1.0
+                },
+                "9": {
+                    "targetnode": 98,
+                    "weight": 1.0
+                }
+            },
+            "position": [
+                660.0,
+                0.0
+            ],
+            "type": 2
+        },
+        "89": {
+            "attenuation": 1.0,
+            "channel": -1,
+            "links": {
+                "0": {
+                    "targetnode": 111,
+                    "weight": 1.0
+                },
+                "1": {
+                    "targetnode": 112,
+                    "weight": 1.0
+                },
+                "10": {
+                    "targetnode": 99,
+                    "weight": 1.0
+                },
+                "11": {
+                    "targetnode": 100,
+                    "weight": 1.0
+                },
+                "12": {
+                    "targetnode": 101,
+                    "weight": 1.0
+                },
+                "13": {
+                    "targetnode": 102,
+                    "weight": 1.0
+                },
+                "14": {
+                    "targetnode": 103,
+                    "weight": 1.0
+                },
+                "15": {
+                    "targetnode": 104,
+                    "weight": 1.0
+                },
+                "16": {
+                    "targetnode": 105,
+                    "weight": 1.0
+                },
+                "17": {
+                    "targetnode": 106,
+                    "weight": 1.0
+                },
+                "18": {
+                    "targetnode": 107,
+                    "weight": 1.0
+                },
+                "19": {
+                    "targetnode": 108,
+                    "weight": 1.0
+                },
+                "2": {
+                    "targetnode": 113,
+                    "weight": 1.0
+                },
+                "20": {
+                    "targetnode": 109,
+                    "weight": 1.0
+                },
+                "21": {
+                    "targetnode": 110,
+                    "weight": 1.0
+                },
+                "3": {
+                    "targetnode": 114,
+                    "weight": 1.0
+                },
+                "4": {
+                    "targetnode": 93,
+                    "weight": 1.0
+                },
+                "5": {
+                    "targetnode": 94,
+                    "weight": 1.0
+                },
+                "6": {
+                    "targetnode": 95,
+                    "weight": 1.0
+                },
+                "7": {
+                    "targetnode": 96,
+                    "weight": 1.0
+                },
+                "8": {
+                    "targetnode": 97,
+                    "weight": 1.0
+                },
+                "9": {
+                    "targetnode": 98,
+                    "weight": 1.0
+                }
+            },
+            "position": [
+                820.0,
+                0.0
+            ],
+            "type": 2
+        },
+        "90": {
+            "attenuation": 1.0,
+            "channel": -1,
+            "links": {
+                "0": {
+                    "targetnode": 115,
+                    "weight": 1.0
+                },
+                "1": {
+                    "targetnode": 116,
+                    "weight": 1.0
+                },
+                "10": {
+                    "targetnode": 101,
+                    "weight": 1.0
+                },
+                "11": {
+                    "targetnode": 102,
+                    "weight": 1.0
+                },
+                "12": {
+                    "targetnode": 103,
+                    "weight": 1.0
+                },
+                "13": {
+                    "targetnode": 104,
+                    "weight": 1.0
+                },
+                "14": {
+                    "targetnode": 105,
+                    "weight": 1.0
+                },
+                "15": {
+                    "targetnode": 106,
+                    "weight": 1.0
+                },
+                "16": {
+                    "targetnode": 107,
+                    "weight": 1.0
+                },
+                "17": {
+                    "targetnode": 108,
+                    "weight": 1.0
+                },
+                "18": {
+                    "targetnode": 109,
+                    "weight": 1.0
+                },
+                "19": {
+                    "targetnode": 110,
+                    "weight": 1.0
+                },
+                "2": {
+                    "targetnode": 93,
+                    "weight": 1.0
+                },
+                "20": {
+                    "targetnode": 111,
+                    "weight": 1.0
+                },
+                "21": {
+                    "targetnode": 112,
+                    "weight": 1.0
+                },
+                "22": {
+                    "targetnode": 113,
+                    "weight": 1.0
+                },
+                "23": {
+                    "targetnode": 114,
+                    "weight": 1.0
+                },
+                "3": {
+                    "targetnode": 94,
+                    "weight": 1.0
+                },
+                "4": {
+                    "targetnode": 95,
+                    "weight": 1.0
+                },
+                "5": {
+                    "targetnode": 96,
+                    "weight": 1.0
+                },
+                "6": {
+                    "targetnode": 97,
+                    "weight": 1.0
+                },
+                "7": {
+                    "targetnode": 98,
+                    "weight": 1.0
+                },
+                "8": {
+                    "targetnode": 99,
+                    "weight": 1.0
+                },
+                "9": {
+                    "targetnode": 100,
+                    "weight": 1.0
+                }
+            },
+            "position": [
+                980.0,
+                0.0
+            ],
+            "type": 2
+        },
+        "91": {
+            "attenuation": 1.0,
+            "channel": -1,
+            "links": {},
+            "position": [
+                0.0,
+                0.0
+            ],
+            "type": 4
+        },
+        "92": {
+            "attenuation": 1.0,
+            "channel": -1,
+            "links": {},
+            "position": [
+                1000.0,
+                0.0
+            ],
+            "type": 4
+        },
+        "93": {
+            "attenuation": 1.0,
+            "channel": 4,
+            "links": {},
+            "position": [
+                20.0,
+                200.0
+            ],
+            "type": 1
+        },
+        "94": {
+            "attenuation": 1.0,
+            "channel": 16,
+            "links": {},
+            "position": [
+                20.0,
+                240.0
+            ],
+            "type": 1
+        },
+        "95": {
+            "attenuation": 1.0,
+            "channel": 3,
+            "links": {},
+            "position": [
+                180.0,
+                200.0
+            ],
+            "type": 1
+        },
+        "96": {
+            "attenuation": 1.0,
+            "channel": 5,
+            "links": {},
+            "position": [
+                180.0,
+                240.0
+            ],
+            "type": 1
+        },
+        "97": {
+            "attenuation": 1.0,
+            "channel": 15,
+            "links": {},
+            "position": [
+                180.0,
+                280.0
+            ],
+            "type": 1
+        },
+        "98": {
+            "attenuation": 1.0,
+            "channel": 17,
+            "links": {},
+            "position": [
+                180.0,
+                320.0
+            ],
+            "type": 1
+        },
+        "99": {
+            "attenuation": 1.0,
+            "channel": 2,
+            "links": {},
+            "position": [
+                340.0,
+                200.0
+            ],
+            "type": 1
+        }
+    },
+    "sets": {
+        "27": [
+            81,
+            91,
+            117
+        ],
+        "28": [
+            81,
+            85,
+            117
+        ],
+        "29": [
+            85,
+            86,
+            117
+        ],
+        "30": [
+            86,
+            87,
+            117
+        ],
+        "31": [
+            87,
+            117,
+            88
+        ],
+        "32": [
+            88,
+            89,
+            117
+        ],
+        "33": [
+            89,
+            90,
+            117
+        ],
+        "34": [
+            92,
+            90,
+            117
+        ]
+    }
+}

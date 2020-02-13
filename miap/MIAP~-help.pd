@@ -1,0 +1,366 @@
+#N canvas 52 22 1447 672 12;
+#X msg 47 115 read_mapA ./example_mapA_max.json;
+#X msg 62 143 read_mapB ./example_mapB_max.json;
+#X msg 76 171 write_mapA ./untitled_mapA.json;
+#X msg 90 199 write_mapB ./untitled_mapB.json;
+#X text 71 34 by Zachary Seldess;
+#X text 325 115 load mapA from JSON file;
+#X text 339 143 load mapB from JSON file;
+#X text 338 171 save mapA to JSON file;
+#X text 352 199 save mapB to JSON file;
+#X floatatom 567 305 5 -1 1 0 - - -, f 5;
+#X floatatom 567 365 5 0 1 0 - - -, f 5;
+#X obj 567 241 pack 0 0;
+#X floatatom 567 180 5 0 0 0 - - -, f 5;
+#X floatatom 628 180 5 0 0 0 - - -, f 5;
+#X msg 567 273 coords \$1 \$2;
+#X text 590 156 coords;
+#X msg 567 394 divergence \$1;
+#X msg 567 334 pan \$1;
+#X obj 591 209 t b f;
+#X msg 567 452 gainsmode \$1;
+#X obj 567 425 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 568 510 panmode \$1;
+#X floatatom 568 482 5 0 2 0 - - -, f 5;
+#X msg 954 213 virtualnodetype \$1;
+#X obj 954 185 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 955 246 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 955 274 derivednodetype \$1;
+#X floatatom 955 365 5 0 0 0 - - -, f 5;
+#X msg 955 394 barycentricpower \$1;
+#X floatatom 955 306 5 0 100 0 - - -, f 5;
+#X msg 955 335 silentnodeweight \$1;
+#X obj 955 484 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 955 510 report \$1;
+#X floatatom 955 423 5 0 2 0 - - -, f 5;
+#X msg 955 451 ramp \$1;
+#X text 588 421 gains mode (lin \, dB) \, default lin;
+#X text 617 479 pan mode (lin \, cos \, sqrt) \, default cos;
+#X text 976 182 virtual node type (power-pres \, lin) \, default power-pres
+;
+#X text 975 242 derived node type (power-pres \, lin) \, default lin
+;
+#X text 1003 304 silent node weight \, default 1;
+#X text 1003 364 barycentric power \, default 1;
+#X text 1004 420 ramp time (samples) \, default 1;
+#X text 977 479 report gains \, default 0;
+#X text 616 364 divergence \, default 0;
+#X obj 547 547 s to_miap~;
+#X obj 932 547 s to_miap~;
+#X text 614 303 map A/B pan (default 0.0);
+#X msg 221 611 \; pd dsp \$1;
+#X obj 221 584 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 220 547 print info;
+#X obj 47 585 snapshot~;
+#X obj 65 548 metro 100;
+#X obj 65 520 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 133 585 snapshot~;
+#X floatatom 47 618 5 0 0 0 - - -, f 5;
+#X floatatom 133 617 5 0 0 0 - - -, f 5;
+#X text 234 490 # of signal outputs (default 2);
+#X text 233 511 ramp (default 1);
+#X text 234 469 optional args:;
+#X obj 92 385 sig~ 1;
+#X text 308 315 <-- look inside;
+#X obj 94 414 r to_miap~;
+#X text 16 11 MIAP~;
+#X text 71 12 Manifold-Interface Amplitude Panner (audio-rate version)
+;
+#X obj 47 469 MIAP~ 2 1000, f 22;
+#X msg 104 228 dump_mapA;
+#X msg 118 257 dump_mapB;
+#X text 192 225 dump mapA;
+#X text 202 257 dump mapB;
+#X text 750 45 <-- look inside;
+#N canvas 95 22 507 131 Attributions 0;
+#X text 13 13 The MIAP MaxMSP and Pure Data (PD) object suite is based
+on Meyer Sound's SpaceMap(R) multi-channel panning feature of CueStation.
+SpaceMap and CueStation are trademarks of Meyer Sound Laboratories
+\, Incorporated.;
+#X restore 582 15 pd Attributions;
+#X text 710 14 <-- look inside;
+#X text 70 63 based on Meyer Sound's SpaceMap(R) abstract panning tool
+, f 61;
+#X text 1072 595 http://www.zacharyseldess.com;
+#X text 1072 619 distributed under license: http://creativecommons.org/licenses/by/3.0/
+, f 44;
+#N canvas 44 22 631 833 About_SpaceMap_and_MIAP 0;
+#X text 14 15 From Meyer Sound’s CueStation User Guide: “A SpaceMap
+design is constructed from two basic elements: nodes and trisets. Nodes
+commonly represent the positions of loudspeakers or groups of speakers
+\, and may be of several types. Trisets link three nodes together \,
+providing the means to distribute signal proportionally among them.”
+;
+#X text 14 145 Node Types:;
+#X text 13 172 Nodes in a map represent single outlets (Speaker Node)
+\, groups of outlets (Virtual Node) \, or points of silence (Silent
+node). Nodes can also derive their audio from other nodes (Derived
+nodes).;
+#X text 14 257 Speaker nodes;
+#X text 127 257 represent single physical outputs in Meyer Sound’s
+Matrix3 and D-Mitri systems. Those outputs can be connected directly
+to speakers \, or passed to effects processors and other external devices.
+Multiple speaker nodes in a map can be bound to the same physical output
+\, if desired. Again there is no inherent relationship between a speaker’s
+physical location in real space and it’s location or locations in
+mapped space.;
+#X text 127 401 represent points in the map that \, if connected to
+a Triset \, behave similarly to a Speaker node. In contrast to a Speaker
+node \, which sends its panned signal on to a physical output \, signal
+panned to a Silent node is simply ignored (i.e. silent). Silent nodes
+provide a convenient way to create fade-ins and fade-outs within a
+map.;
+#X text 20 401 Silent nodes;
+#X text 127 514 represent points in the mapped space whose existence
+is “virtualized” via weighted links to one ore more of a map’s
+Speaker nodes. Signal from linked Speaker nodes is \, by default \,
+weighted equally between all Speaker nodes \, though weightings can
+be customized to bias the signal of one speaker node over another.
+;
+#X text 13 514 Virtual nodes;
+#X text 127 620 For MIAP panners \, the resulting signal routed to
+the linked Speaker nodes can be either power-preserving (the default
+setting) or linearly summing.;
+#X text 13 686 Derived nodes;
+#X text 127 686 as the name implies \, derive their signal from Speaker
+nodes. This is the only node type that is not typically part of a Triset
+\, and therefore its physical placement in the mapped space has no
+functional purpose (aside from visual clarity).;
+#X text 127 762 For MIAP panners \, the resulting signal derived from
+the linked Speaker nodes can be either power-preserving or linearly
+summing (the default setting.).;
+#X restore 583 76 pd About_SpaceMap_and_MIAP;
+#X text 727 107 <-- look inside;
+#N canvas 57 22 676 456 About_Messages 0;
+#X text 56 15 divergence;
+#X text 155 15 global power-preserving spread (range 0 to 1 \, default
+0.);
+#X text 112 46 pan;
+#X text 155 46 pan between map A and B (range -1 to 1 \, default 0.)
+;
+#X text 81 78 panmode;
+#X text 155 78 curve used to pan between maps: cosine \, square root
+\, linear (default linear);
+#X text 66 124 gainsmode;
+#X text 155 124 output "speaker" gains in linear amplitude or decibel
+formats (0 = linear \, 1 = dB \, default 0);
+#X text 19 250 virtualnodetype;
+#X text 155 250 manner in which virtual nodes route signal to linked
+speaker nodes (0 = power-preserving \, 1 = linear \, default 0);
+#X text 19 295 derivednodetype;
+#X text 155 295 manner in which derived nodes derive signal from linked
+speaker nodes (0 = power-preserving \, 1 = linear \, default 1);
+#X text 12 341 barycentricpower;
+#X text 155 341 raise the barycentric ratios to the specified power
+(effectively pushing the point towards the edge of the triset) to give
+better dynamic range (range >= 0 \, default 1.), f 62;
+#X text 12 404 silentnodeweight;
+#X text 155 404 barycentric weight for silent nodes (range >= 0 \,
+default 1 [default in Meyer SpaceMap ≈ 3.]), f 62;
+#X text 90 170 report;
+#X text 155 170 report gains as message out of right outlet (default
+0);
+#X text 106 202 ramp;
+#X text 155 202 smoothing time in samples for gains applied to outgoing
+signal (range >= 1 \, default 1);
+#X restore 583 107 pd About_Messages;
+#X text 800 75 <-- look inside;
+#N canvas 71 22 1319 737 Map_Authoring 0;
+#X msg 33 50 node_create 0 1;
+#X msg 44 119 node_delete 0 0;
+#X msg 60 178 triset_create 0 0 0 1 2;
+#X msg 75 240 triset_delete 0 0;
+#X obj 33 513 outlet;
+#X msg 96 373 link_delete 0 0 1;
+#X msg 546 178 node_type 0 \$1 \$2;
+#X floatatom 546 81 5 0 0 0 - - -, f 5;
+#X floatatom 607 81 5 1 4 0 - - -, f 5;
+#X obj 546 142 pack 0 1;
+#X obj 570 110 t b f;
+#X text 608 54 type;
+#X floatatom 706 81 5 0 0 0 - - -, f 5;
+#X floatatom 767 81 5 0 0 0 - - -, f 5;
+#X obj 706 142 pack 0 1;
+#X obj 730 110 t b f;
+#X text 760 54 channel;
+#X msg 706 178 node_channel 0 \$1 \$2;
+#X floatatom 1094 81 5 0 0 0 - - -, f 5;
+#X floatatom 1165 81 5 0 0 0 - - -, f 5;
+#X obj 1094 142 pack 0 1;
+#X obj 1118 110 t b f;
+#X msg 1094 178 node_attenuation 0 \$1 \$2;
+#X text 1145 54 attenuation;
+#X floatatom 884 81 5 0 0 0 - - -, f 5;
+#X floatatom 945 81 5 0 0 0 - - -, f 5;
+#X obj 909 110 t b f;
+#X obj 884 142 pack 0 0 0, f 16;
+#X obj 972 110 t b f;
+#X text 957 55 x;
+#X floatatom 1005 81 5 0 0 0 - - -, f 5;
+#X text 1017 55 y;
+#X msg 884 178 node_position 0 \$1 \$2 \$3;
+#X msg 407 481 node_create 0 0 500 500 -1 2 1 \, node_create 0 1 500
+0 1 1 1 \, node_create 0 2 0 0 2 1 1 \, node_create 0 3 -500 500 3
+1 1, f 34;
+#X msg 407 597 link_create 0 0 1 1 \, link_create 0 0 2 0.5 \, link_create
+0 0 3 0.5, f 22;
+#X msg 407 555 triset_create 0 0 0 1 2 \, triset_create 0 1 0 2 3,
+f 24;
+#X text 406 452 EXAMPLE: create two trisets in Map A;
+#X text 50 665 map: 0 = A \, 1 = B;
+#X text 31 640 NOTES:;
+#X text 29 23 CREATE NODE;
+#X text 42 94 DELETE NODE;
+#X text 58 152 CREATE TRISET;
+#X text 166 48 args: map \, id \, x \, y \, chan \, type \, atten;
+#X text 192 67 optional args: x \, y \, chan \, type \, atten;
+#X text 178 118 args: map \, id;
+#X text 256 177 args: map \, triset id \, node id1 \, node id2 \, node
+id3, f 31;
+#X text 72 213 DELETE TRISET;
+#X text 221 239 args: map \, triset id;
+#X text 84 275 CREATE LINK;
+#X text 235 298 args: map \, link node \, target node \, weight;
+#X msg 86 299 link_create 0 0 1;
+#X text 266 318 optional arg: weight;
+#X text 266 337 default: 1;
+#X text 193 85 defaults: 0 \, 0 \, 1 \, 1 \, 1;
+#X text 95 348 DELETE LINK;
+#X text 245 374 args: map \, link node \, target node;
+#X text 778 19 EDIT NODE PROPERTIES;
+#X text 536 55 node id;
+#X text 697 55 node id;
+#X text 875 55 node id;
+#X text 1082 54 node id;
+#X text 799 278 EDIT LINK WEIGHT;
+#X floatatom 773 335 5 0 0 0 - - -, f 5;
+#X floatatom 862 335 5 0 0 0 - - -, f 5;
+#X obj 798 364 t b f;
+#X obj 861 364 t b f;
+#X floatatom 944 335 5 0 0 0 - - -, f 5;
+#X obj 773 396 pack 0 1 1, f 16;
+#X text 940 309 weight;
+#X text 755 309 link node;
+#X text 839 309 target node;
+#X msg 773 428 link_weight 0 \$1 \$2 \$3;
+#X obj 826 226 s auth_out;
+#X obj 94 513 r auth_out;
+#X obj 773 462 s auth_out;
+#X text 172 417 ERASE ALL MAP ELEMENTS;
+#X msg 174 445 clear_map 0;
+#X text 275 445 arg: map;
+#X text 49 687 node types: 1 = speaker \, 2 = virtual \, 3 = derived
+\, 4 = silent, f 62;
+#X connect 0 0 4 0;
+#X connect 1 0 4 0;
+#X connect 2 0 4 0;
+#X connect 3 0 4 0;
+#X connect 5 0 4 0;
+#X connect 6 0 72 0;
+#X connect 7 0 9 0;
+#X connect 8 0 10 0;
+#X connect 9 0 6 0;
+#X connect 10 0 9 0;
+#X connect 10 1 9 1;
+#X connect 12 0 14 0;
+#X connect 13 0 15 0;
+#X connect 14 0 17 0;
+#X connect 15 0 14 0;
+#X connect 15 1 14 1;
+#X connect 17 0 72 0;
+#X connect 18 0 20 0;
+#X connect 19 0 21 0;
+#X connect 20 0 22 0;
+#X connect 21 0 20 0;
+#X connect 21 1 20 1;
+#X connect 22 0 72 0;
+#X connect 24 0 27 0;
+#X connect 25 0 26 0;
+#X connect 26 0 27 0;
+#X connect 26 1 27 1;
+#X connect 27 0 32 0;
+#X connect 28 0 27 0;
+#X connect 28 1 27 2;
+#X connect 30 0 28 0;
+#X connect 32 0 72 0;
+#X connect 33 0 4 0;
+#X connect 34 0 4 0;
+#X connect 35 0 4 0;
+#X connect 50 0 4 0;
+#X connect 62 0 67 0;
+#X connect 63 0 64 0;
+#X connect 64 0 67 0;
+#X connect 64 1 67 1;
+#X connect 65 0 67 0;
+#X connect 65 1 67 2;
+#X connect 66 0 65 0;
+#X connect 67 0 71 0;
+#X connect 71 0 74 0;
+#X connect 73 0 4 0;
+#X connect 76 0 4 0;
+#X restore 171 316 pd Map_Authoring;
+#N canvas 48 22 560 301 SpaceMap(R)_links 0;
+#X text 23 15 MIAP website:;
+#X text 23 76 Meyer Sound's SpaceMap Application:;
+#X text 51 183 https://www.meyersound.com/news/2013/steve_ellison_spacemap/
+;
+#X text 24 140 Steve Ellison's 2013 article on the evolution of SpaceMap
+in "Lighting and Sound America":;
+#X text 24 221 Meyer Sound Cue Station user guide (see SpaceMap section):
+;
+#X text 51 250 http://www.meyersound.com/sites/default/files/cuestation_5.2.0_user_guide.5.13.2011.pdf
+;
+#X text 50 102 http://meyersound.com/products/d-mitri/cuestation/register/index.htm
+;
+#X text 50 41 http://www.zacharyseldess.com/miap;
+#X restore 582 45 pd SpaceMap(R)_links;
+#X connect 0 0 64 0;
+#X connect 1 0 64 0;
+#X connect 2 0 64 0;
+#X connect 3 0 64 0;
+#X connect 9 0 17 0;
+#X connect 10 0 16 0;
+#X connect 11 0 14 0;
+#X connect 12 0 11 0;
+#X connect 13 0 18 0;
+#X connect 14 0 44 0;
+#X connect 16 0 44 0;
+#X connect 17 0 44 0;
+#X connect 18 0 11 0;
+#X connect 18 1 11 1;
+#X connect 19 0 44 0;
+#X connect 20 0 19 0;
+#X connect 21 0 44 0;
+#X connect 22 0 21 0;
+#X connect 23 0 45 0;
+#X connect 24 0 23 0;
+#X connect 25 0 26 0;
+#X connect 26 0 45 0;
+#X connect 27 0 28 0;
+#X connect 28 0 45 0;
+#X connect 29 0 30 0;
+#X connect 30 0 45 0;
+#X connect 31 0 32 0;
+#X connect 32 0 45 0;
+#X connect 33 0 34 0;
+#X connect 34 0 45 0;
+#X connect 48 0 47 0;
+#X connect 50 0 54 0;
+#X connect 51 0 50 0;
+#X connect 51 0 53 0;
+#X connect 52 0 51 0;
+#X connect 53 0 55 0;
+#X connect 59 0 64 0;
+#X connect 61 0 64 0;
+#X connect 64 0 50 0;
+#X connect 64 1 53 0;
+#X connect 64 2 49 0;
+#X connect 65 0 64 0;
+#X connect 66 0 64 0;
+#X connect 79 0 64 0;
